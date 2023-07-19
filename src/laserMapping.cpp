@@ -242,13 +242,13 @@ int main(int argc, char** argv)
 
   ros::Publisher pubOdomBefMapped = nh.advertise<nav_msgs::Odometry> ("/bef_mapped_to_init_2", 5);
   nav_msgs::Odometry odomBefMapped;
-  odomBefMapped.header.frame_id = "/camera_init_2";
-  odomBefMapped.child_frame_id = "/bef_mapped";
+  odomBefMapped.header.frame_id = "camera_init_2";
+  odomBefMapped.child_frame_id = "bef_mapped";
 
   ros::Publisher pubOdomAftMapped = nh.advertise<nav_msgs::Odometry> ("/aft_mapped_to_init_2", 5);
   nav_msgs::Odometry odomAftMapped;
-  odomAftMapped.header.frame_id = "/camera_init_2";
-  odomAftMapped.child_frame_id = "/aft_mapped";
+  odomAftMapped.header.frame_id = "camera_init_2";
+  odomAftMapped.child_frame_id = "aft_mapped";
 
   std::vector<int> pointSearchInd;
   std::vector<float> pointSearchSqDis;
@@ -726,7 +726,7 @@ int main(int argc, char** argv)
       sensor_msgs::PointCloud2 laserCloudSurround2;
       pcl::toROSMsg(*laserCloudSurround, laserCloudSurround2);
       laserCloudSurround2.header.stamp = ros::Time().fromSec(timeLaserCloudLast);
-      laserCloudSurround2.header.frame_id = "/camera_init_2";
+      laserCloudSurround2.header.frame_id = "camera_init_2";
       pubLaserCloudSurround.publish(laserCloudSurround2);
 
       geometry_msgs::Quaternion geoQuat = tf::createQuaternionMsgFromRollPitchYaw
