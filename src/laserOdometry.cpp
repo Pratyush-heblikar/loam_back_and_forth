@@ -11,16 +11,14 @@
 #include <tf/transform_datatypes.h>
 #include <tf/transform_broadcaster.h>
 
-#include <opencv/cv.h>
+#include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-#include <pcl/ros/conversions.h>
-// pcl fromROSMsg() has changed, need to include <pcl_conversions/pcl_conversions.h> header
-#include <pcl_conversions/pcl_conversions.h>
-#include <pcl/point_cloud.h>
+#include <pcl_ros/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/kdtree/kdtree_flann.h>
+#include <pcl_conversions/pcl_conversions.h>
 
 const double PI = 3.1415926;
 const double rad2deg = 180 / PI;
